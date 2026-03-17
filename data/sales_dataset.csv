@@ -1,0 +1,16 @@
+Date,Region,Product,Sales,Profit,Quantity
+2023-01-01,North,Widget A,1200,300,50
+2023-01-02,South,Widget B,800,150,30
+2023-01-03,East,Widget C,1500,450,40
+2023-01-04,West,Widget A,1100,250,45
+2023-01-05,North,Widget B,950,200,35
+2023-01-06,South,Widget C,1300,380,38
+2023-01-07,East,Widget A,1400,350,55
+2023-01-08,West,Widget B,750,120,25
+2023-01-09,North,Widget C,1600,500,42
+2023-01-10,South,Widget A,1050,280,48
+2023-01-11,East,Widget B,880,180,32
+2023-01-12,West,Widget C,1450,420,39
+2023-01-13,North,Widget A,1250,310,52
+2023-01-14,South,Widget B,820,160,31
+2023-01-15,East,Widget C,1550,470,41

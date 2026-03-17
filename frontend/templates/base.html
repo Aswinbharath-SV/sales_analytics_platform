@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Radiance Analytics{% endblock %}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar glassmorphism">
+        <div class="nav-brand">
+            <i class="fa-solid fa-chart-pie logo-icon"></i>
+            <span>Radiance Analytics</span>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            {% if user %}
+            <a href="/dashboard">Dashboard</a>
+            <a href="/analytics">Analytics</a>
+            <a href="#" class="btn btn-outline" style="border: none; cursor: default;"><i class="fa-solid fa-user"></i>
+                {{ user.split('@')[0] }}</a>
+            <a href="/logout" class="btn btn-primary"
+                style="background-color: #ef4444; border-color: #ef4444;">Logout</a>
+            {% else %}
+            <a href="/login" class="btn btn-outline">Login</a>
+            <a href="/register" class="btn btn-primary">Sign Up</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer glassmorphism-dark">
+        <div class="footer-content">
+            <p>Developed by Aswin Bharath,Rahul,Rasheetha,Dusyanth &ndash; <strong>Team Radiance</strong></p>
+            <p class="copyright">&copy; 2026 Radiance Analytics Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="/static/js/main.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

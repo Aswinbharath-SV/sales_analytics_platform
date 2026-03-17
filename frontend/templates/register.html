@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Radiance Analytics - Register{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card glass-card fade-in-up">
+        <div class="auth-header">
+            <h2>Create an Account</h2>
+            <p>Join Radiance Analytics today</p>
+        </div>
+
+        {% if error %}
+        <div
+            style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form class="auth-form" action="/api/register" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Decorative background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+</div>
+{% endblock %}

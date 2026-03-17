@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Radiance Analytics - Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-layout fade-in">
+    <!-- Sidebar -->
+    <aside class="sidebar glassmorphism">
+        <div class="sidebar-menu">
+            <a href="/dashboard" class="menu-item active"><i class="fa-solid fa-house"></i> Overview</a>
+            <a href="/analytics" class="menu-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+            <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+        </div>
+
+        <div class="upload-section glass-card">
+            <h3>Data Source</h3>
+            <form id="uploadForm" class="upload-form">
+                <div class="file-drop-area" id="dropArea">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Drag & Drop CSV</p>
+                    <span>or</span>
+                    <button type="button" class="btn btn-outline btn-small"
+                        onclick="document.getElementById('csvFile').click()">Browse</button>
+                    <input type="file" id="csvFile" name="file" accept=".csv" style="display: none;">
+                </div>
+                <!-- Interactive Sample Feature -->
+                <button type="button" class="btn btn-primary" id="btnLoadSample" style="width: 100%; margin-top: 15px;">
+                    <i class="fa-solid fa-bolt"></i> Load Sample Data
+                </button>
+                <div id="uploadStatus" class="upload-status" style="margin-top: 10px;"></div>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-dashboard">
+        <header class="dashboard-header">
+            <h2>Dashboard Overview</h2>
+            <div class="user-profile">
+                <span class="user-avatar">AD</span>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid" id="kpiContainer">
+            <!-- Populated securely by JS -->
+            <div class="kpi-card glass-card skeleton-loading"></div>
+            <div class="kpi-card glass-card skeleton-loading"></div>
+            <div class="kpi-card glass-card skeleton-loading"></div>
+            <div class="kpi-card glass-card skeleton-loading"></div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+            <div class="chart-container glass-card main-chart">
+                <div class="chart-header">
+                    <h3>Primary Trends</h3>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container glass-card secondary-chart">
+                <div class="chart-header">
+                    <h3>Distribution</h3>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="secondaryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- AI Chatbot Floating Section -->
+    <div class="ai-chat-widget glassmorphism-dark">
+        <div class="chat-header">
+            <i class="fa-solid fa-message-bot"></i>
+            <h3>Radiance AI Assistant</h3>
+            <button class="minimize-btn" id="minimizeChat"><i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai-message">
+                <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="text">Hello! I'm the Radiance AI Assistant. Upload a CSV file and ask me anything about your
+                    data. Try asking: "What are the total sales?"</div>
+            </div>
+        </div>
+
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask about your data..." required autocomplete="off">
+            <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+</div>
+{% endblock %}

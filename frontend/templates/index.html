@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Radiance Analytics - Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="gradient-text fade-in-up">AI-Powered Sales Insights</h1>
+        <p class="hero-subtitle fade-in-up delay-1">Upload your CSVs, chat with your data, and unlock actionable
+            insights in seconds. The future of data analytics is here.</p>
+
+        <div class="hero-cta fade-in-up delay-2">
+            <a href="/register" class="btn btn-primary btn-large">Get Started Now <i
+                    class="fa-solid fa-arrow-right"></i></a>
+            <a href="/login" class="btn btn-outline btn-large">Login to Dashboard</a>
+        </div>
+    </div>
+
+    <div class="hero-visual fade-in delay-3"
+        style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+        <img src="/static/images/dashboard_mockup.png" alt="Analytics Dashboard Mockup"
+            style="width: 100%; height: auto; display: block;" />
+    </div>
+</section>
+
+<section class="features-section">
+    <h2 class="section-title">Why Choose Radiance?</h2>
+    <div class="features-grid">
+        <div class="feature-card glass-card hover-lift">
+            <i class="fa-solid fa-robot feature-icon"></i>
+            <h3>Conversational AI</h3>
+            <p>Ask questions about your data in plain English. Our AI instantly analyzes and visualizes the answers.</p>
+        </div>
+        <div class="feature-card glass-card hover-lift">
+            <i class="fa-solid fa-chart-line feature-icon"></i>
+            <h3>Dynamic Visualizations</h3>
+            <p>Automatically generate beautiful, interactive charts that adapt perfectly to your uploaded datasets.</p>
+        </div>
+        <div class="feature-card glass-card hover-lift">
+            <i class="fa-solid fa-bolt feature-icon"></i>
+            <h3>Real-time Processing</h3>
+            <p>Upload massive CSV files and get instant metrics without waiting for slow database queries.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Adding Image and explanation for the new Gemini 8B Architecture -->
+<section class="performance-section glassmorphism-dark" style="padding: 4rem 2rem; margin: 2rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">Lightning Fast Sub-Second
+                Inference</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 1.5rem;">
+                Tired of waiting for generic AI models to chew through your datasets? We've upgraded Radiance
+                to utilize the bleeding-edge Google <strong>Gemini 1.5 Flash 8B</strong> model architecture.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #cbd5e1;">
+                By securely passing only your column definitions and metadata to the LLM, we guarantee your queries
+                return the exact Pandas analytical answers in less than a second, letting you iterate on your
+                data at the speed of thought.
+            </p>
+            <div style="margin-top: 2rem; display: flex; gap: 2rem;">
+                <div>
+                    <h3 class="gradient-text" style="font-size: 2rem; margin-bottom: 0;">0.8s</h3>
+                    <p style="color: #94a3b8;">Avg Query Latency</p>
+                </div>
+                <div>
+                    <h3 class="gradient-text" style="font-size: 2rem; margin-bottom: 0;">1M+</h3>
+                    <p style="color: #94a3b8;">Supported Rows</p>
+                </div>
+            </div>
+        </div>
+        <div
+            style="flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img src="/static/images/ai_chat_mockup.png" alt="AI Chat Experience"
+                style="width: 100%; height: auto; display: block;" />
+        </div>
+    </div>
+</section>
+
+<!-- Walkthrough Section -->
+<section class="how-it-works-section" style="padding: 4rem 2rem; background: rgba(0,0,0,0.2);">
+    <h2 class="section-title text-center" style="margin-bottom: 3rem;">How It Works</h2>
+    <div
+        style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+
+        <div class="glass-card text-center" style="padding: 2rem;">
+            <div style="font-size: 3rem; color: #3b82f6; margin-bottom: 1rem;"><i
+                    class="fa-solid fa-cloud-arrow-up"></i></div>
+            <h3 style="margin-bottom: 1rem;">1. Upload Data</h3>
+            <p style="color: #94a3b8;">Drop enormous Kaggle CSVs straight into your browser, or quickly test using our
+                sample data button on the dashboard.</p>
+        </div>
+
+        <div class="glass-card text-center" style="padding: 2rem;">
+            <div style="font-size: 3rem; color: #8b5cf6; margin-bottom: 1rem;"><i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">2. Instant Visualization</h3>
+            <p style="color: #94a3b8;">Our bounded Pandas processor creates interactive pie, bar, and timeline charts
+                summarizing your top metrics cleanly without freezing.</p>
+        </div>
+
+        <div class="glass-card text-center" style="padding: 2rem;">
+            <div style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"><i class="fa-solid fa-messages"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">3. Query Using Plain English</h3>
+            <p style="color: #94a3b8;">Simply ask "What's the highest total sales amount?" and let Gemini instantly
+                execute the math locally on your machine securely.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="trusted-by">
+    <p>Trusted by innovative teams worldwide</p>
+    <div class="logo-marquee">
+        <!-- Mock Logos -->
+        <span class="company-logo"><i class="fa-brands fa-apple"></i></span>
+        <span class="company-logo"><i class="fa-brands fa-google"></i></span>
+        <span class="company-logo"><i class="fa-brands fa-microsoft"></i></span>
+        <span class="company-logo"><i class="fa-brands fa-amazon"></i></span>
+        <span class="company-logo"><i class="fa-brands fa-stripe"></i></span>
+    </div>
+</section>
+{% endblock %}
